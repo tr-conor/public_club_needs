@@ -134,7 +134,7 @@ for posi in position:
     with sty_col:
         all_style_ch = st.checkbox(str(posi)+' All Playing Styles')
         
-        if all_style_ch:
+        if all_style_ch or posid == 6:
             all_styles = '1'
         else:        
             style_sql = """select pr.*,concat(position_role,' (',gp.code,')') style from tr.position_role pr
