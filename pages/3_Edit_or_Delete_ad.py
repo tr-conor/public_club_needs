@@ -129,7 +129,7 @@ if len(rows_selected)>0:
     
     footupdtsql = ''
     
-    st.text('Current foot = '+str(old_style))
+    st.text('Current foot = '+str(old_foot))
     change_foot = st.checkbox('Change foot')
     if change_foot:
          all_feet = st.checkbox('Either foot',value=True)         
