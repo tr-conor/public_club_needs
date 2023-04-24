@@ -138,15 +138,14 @@ all_feet = '1'
 if all_pos == '0' :
     sty_col,foot_col = st.columns(2)
     with sty_col:
-        style_sql = """select pr.*,concat(position_role,' (',gp.code,')') style from tr.position_role pr
-                        left join tr.GeneralPosition gp on gp.Id = pr.generalpositionid
-                        where gp.id in ("""+pos_ids_chosen+""")"""
-        selected_styles = pd.DataFrame(engine.connect().execute(text(style_sql)))
-        style = selected_styles['style']
-        
         if pos_ids_chosen == """'','6'""":
             styles = st.multiselect('Playing Style (CS added only)',[])
         else:
+            style_sql = """select pr.*,concat(position_role,' (',gp.code,')') style from tr.position_role pr
+                            left join tr.GeneralPosition gp on gp.Id = pr.generalpositionid
+                            where gp.id in ("""+pos_ids_chosen+""")"""
+            selected_styles = pd.DataFrame(engine.connect().execute(text(style_sql)))
+            style = selected_styles['style']
             styles = st.multiselect('Playing Style (CS added only)',style)
             
 
