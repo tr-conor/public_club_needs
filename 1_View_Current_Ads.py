@@ -104,7 +104,6 @@ position = st.multiselect(
     'Select Position(s)'
     ,pos['pos'])
 
-st.write(position)
 
 posns_chosen = []
 for i in range(0,len(position)):
@@ -118,8 +117,6 @@ for r in range(0,len(posns_chosen)):
     pos_ids_chosen.append(pos_r_id)
 
 pos_ids_chosen = str(pos_ids_chosen).replace('[','').replace(']','')
-
-st.write(pos_ids_chosen)
 
 all_pos_ch = st.checkbox('All Positions',value = True)
 
