@@ -131,7 +131,7 @@ left_foot = """'0'"""
 foot_ids_chosen = """1,2,3"""
 all_feet = '1'
 
-if all_pos == '0' and pos_ids_chosen != """'6'""":
+if all_pos == '0':
     sty_col,foot_col = st.columns(2)
     with sty_col:
         style_sql = """select pr.*,concat(position_role,' (',gp.code,')') style from tr.position_role pr
@@ -140,8 +140,10 @@ if all_pos == '0' and pos_ids_chosen != """'6'""":
         selected_styles = pd.DataFrame(engine.connect().execute(text(style_sql)))
         style = selected_styles['style']
         
-            
-        styles = st.multiselect('Playing Style (CS added only)',style)
+	if pos_ids_chosen == """'6'""":
+		styles = st.multiselect('Playing Style (CS added only)',[])
+	else:
+		styles = st.multiselect('Playing Style (CS added only)',style)
         
         styles_chosen = []
         for s in range(0,len(styles)):
