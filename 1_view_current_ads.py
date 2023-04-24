@@ -141,9 +141,9 @@ if all_pos == '0':
         style = selected_styles['style']
         
 	if pos_ids_chosen == """'6'""":
-	    styles = st.multiselect('Playing Style (CS added only)',[])
+            styles = st.multiselect('Playing Style (CS added only)',[])
 	else:
-	    styles = st.multiselect('Playing Style (CS added only)',style)
+            styles = st.multiselect('Playing Style (CS added only)',style)
         
         styles_chosen = []
         for s in range(0,len(styles)):
