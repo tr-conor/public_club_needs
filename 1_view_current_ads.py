@@ -58,7 +58,7 @@ from tr.playerad pa where playeradtypeid = 1 and active = 1 and pa.UpdatedAt >= 
 max_buy_ad = pd.DataFrame(engine.connect().execute(text(max_buy_ad_sql)))
 max_fee = max_buy_ad.iloc[0,0].astype(float)
 max_sal = max_buy_ad.iloc[0,1].astype(float)
-minn = max_buy_ad.iloc[0,2].astype(float)
+minn = max_buy_ad.iloc[0,2]		#.astype(float)
 
 max_loan_ad_sql = """select max(round(tr.ConvertCurrencyToEuros((pa.Amount),pa.CurrencyId,(pa.UpdatedAt)),0)) Loan
 ,0.0 minn 
