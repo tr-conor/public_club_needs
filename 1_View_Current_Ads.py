@@ -140,7 +140,7 @@ if all_pos == '0' :
         selected_styles = pd.DataFrame(engine.connect().execute(text(style_sql)))
         style = selected_styles['style']
         
-        if pos_ids_chosen == """'6'""":
+        if position == 'Goalkeeper':
             styles = st.multiselect('Playing Style (CS added only)',[])
         else:
             styles = st.multiselect('Playing Style (CS added only)',style)
