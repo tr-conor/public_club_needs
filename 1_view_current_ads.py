@@ -131,7 +131,7 @@ left_foot = """'0'"""
 foot_ids_chosen = """1,2,3"""
 all_feet = '1'
 
-if all_pos == '0' :
+if all_pos == '0' and pos_ids_chosen != """'6'""":
     sty_col,foot_col = st.columns(2)
     with sty_col:
         style_sql = """select pr.*,concat(position_role,' (',gp.code,')') style from tr.position_role pr
