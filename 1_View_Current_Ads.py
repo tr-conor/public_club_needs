@@ -138,7 +138,7 @@ all_feet = '1'
 if all_pos == '0' :
     sty_col,foot_col = st.columns(2)
     with sty_col:
-        if pos_ids_chosen == """'','6'""":
+        if pos_ids_chosen == """'', '6'""":
             styles = st.multiselect('Playing Style (CS added only)',[])
         else:
             style_sql = """select pr.*,concat(position_role,' (',gp.code,')') style from tr.position_role pr
